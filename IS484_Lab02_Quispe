@@ -54,9 +54,59 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "id": "0cf7c52e-9b16-40e7-95c3-4dbda4403300",
+   "metadata": {},
+   "source": [
+    "**Implementación de BFS**\n",
+    "Completar la función de búsqueda en amplitud, usando una cola (lista de Python, con .pop(0)\n",
+    "para sacar el primer elemento):"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "a98837aa-b8d8-4805-95e6-03820db4143e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Camino encontrado (BFS): ['Almacen', 'Centro', 'ZonaNorte']\n"
+     ]
+    }
+   ],
+   "source": [
+    "def bfs(grafo, inicio, objetivo):\n",
+    "    \"\"\"Busca el camino mas corto entre 'inicio' y 'objetivo' usando BFS.\"\"\"\n",
+    "    cola = [[inicio]]  # cola de caminos, empieza con el estado inicial\n",
+    "    visitados = set()\n",
+    "\n",
+    "    while cola:\n",
+    "        camino = cola.pop(0)  # sacar el primer camino de la cola (FIFO)\n",
+    "        nodo_actual = camino[-1]\n",
+    "\n",
+    "        if nodo_actual == objetivo:\n",
+    "            return camino\n",
+    "\n",
+    "        if nodo_actual not in visitados:\n",
+    "            visitados.add(nodo_actual)\n",
+    "            for vecino in grafo[nodo_actual]:\n",
+    "                # COMPLETADO: crear un nuevo camino y agregarlo a la cola\n",
+    "                nuevo_camino = camino + [vecino]\n",
+    "                cola.append(nuevo_camino)\n",
+    "\n",
+    "    return None  # no se encontro un camino\n",
+    "\n",
+    "resultado = bfs(mapa, \"Almacen\", \"ZonaNorte\")\n",
+    "print(\"Camino encontrado (BFS):\", resultado)"
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": null,
-   "id": "0cf7c52e-9b16-40e7-95c3-4dbda4403300",
+   "id": "d5cb2669-a2b7-4c88-8441-5b38f564723f",
    "metadata": {},
    "outputs": [],
    "source": []
