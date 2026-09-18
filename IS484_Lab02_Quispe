@@ -104,9 +104,66 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "id": "d5cb2669-a2b7-4c88-8441-5b38f564723f",
+   "metadata": {},
+   "source": [
+    "### Vectores, Matrices y Distancia Euclidiana\n",
+    "\n",
+    "En esta sección se trabaja con la librería **NumPy** para representar datos multivariados mediante vectores/matrices y calcular métricas de similitud (producto escalar y distancia euclidiana)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "76ce46d8-531f-4f46-a4fe-e5356482cd9c",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Dataset:\n",
+      " [[22.5 60. ]\n",
+      " [19.  45. ]\n",
+      " [25.3 70. ]\n",
+      " [21.  50. ]]\n",
+      "Forma de la matriz: (4, 2)\n",
+      "\n",
+      "Producto escalar entre obs1 y obs2: 3127.5\n",
+      "Distancia euclidiana (manual): 15.402921800749363\n",
+      "Distancia euclidiana (NumPy): 15.402921800749363\n"
+     ]
+    }
+   ],
+   "source": [
+    "import numpy as np\n",
+    "\n",
+    "# Sección 4.4: Vectores y Matrices\n",
+    "obs1 = np.array([22.5, 60])\n",
+    "obs2 = np.array([19.0, 45])\n",
+    "obs3 = np.array([25.3, 70])\n",
+    "obs4 = np.array([21.0, 50])\n",
+    "\n",
+    "dataset = np.array([obs1, obs2, obs3, obs4])\n",
+    "print(\"Dataset:\\n\", dataset)\n",
+    "print(\"Forma de la matriz:\", dataset.shape)\n",
+    "\n",
+    "# Sección 4.5: Producto Escalar y Distancia Euclidiana\n",
+    "producto = np.dot(obs1, obs2)\n",
+    "print(\"\\nProducto escalar entre obs1 y obs2:\", producto)\n",
+    "\n",
+    "distancia_manual = np.sqrt(np.sum((obs1 - obs2) ** 2))\n",
+    "print(\"Distancia euclidiana (manual):\", distancia_manual)\n",
+    "\n",
+    "distancia_numpy = np.linalg.norm(obs1 - obs2)\n",
+    "print(\"Distancia euclidiana (NumPy):\", distancia_numpy)"
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": null,
-   "id": "d5cb2669-a2b7-4c88-8441-5b38f564723f",
+   "id": "5d0cb890-0005-4259-b967-31256c9259fa",
    "metadata": {},
    "outputs": [],
    "source": []
