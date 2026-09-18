@@ -1,9 +1,37 @@
 {
  "cells": [
   {
+   "cell_type": "markdown",
+   "id": "c36dfcc7-0440-43f3-9b1b-6479e2e12a93",
+   "metadata": {},
+   "source": [
+    "### 4.2. Representación de un problema mediante estados\n",
+    "\n",
+    "**Parte A: Ficha del problema del repartidor**\n",
+    "Completar la cha del problema para el siguiente caso: un repartidor debe ir desde el\n",
+    "Almacén hasta la Zona Norte, pudiendo pasar por distintos puntos intermedios de la ciudad.\n",
+    "\n",
+    "| Elemento | Descripción |\n",
+    "| :--- | :--- |\n",
+    "| **Estado inicial** | Almacén |\n",
+    "| **Estado objetivo** | Zona Norte |\n",
+    "| **Acciones posibles** | Desplazarse/Moverse hacia un punto intermedio directamente conectado (ej. ir de Almacén a Centro o Terminal, de Centro a Mercado, etc.) |\n",
+    "| **Costo de cada acción** | 1 (representa la distancia, tiempo o consumo uniforme al pasar de un punto a otro) |"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d96a0a1b-0eeb-4398-bd4e-808d048dc65c",
+   "metadata": {},
+   "source": [
+    "**Parte B:** Representar el mapa de la ciudad como un grafo en Python, usando un diccionario de\n",
+    "listas (cada clave es un punto, cada valor es la lista de puntos conectados directamente):\n"
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": null,
-   "id": "08c49373-adba-4ca6-b08f-9ec079e3b7cd",
+   "id": "36252e98-ee03-4be4-956f-e998f02815d9",
    "metadata": {},
    "outputs": [],
    "source": []
@@ -11,11 +39,21 @@
  ],
  "metadata": {
   "kernelspec": {
-   "display_name": "",
-   "name": ""
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
   },
   "language_info": {
-   "name": ""
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.14.7"
   }
  },
  "nbformat": 4,
