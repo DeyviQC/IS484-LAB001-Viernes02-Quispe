@@ -161,9 +161,60 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "id": "5d0cb890-0005-4259-b967-31256c9259fa",
+   "metadata": {},
+   "source": [
+    "### Implementación de DFS (Búsqueda en Profundidad)\n",
+    "\n",
+    "En esta sección implementamos el algoritmo de Búsqueda en Profundidad (DFS) utilizando una **pila (LIFO)** o recursividad para explorar los caminos del grafo.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "8fdd65b4-2a57-49de-9601-97ba0777261b",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Camino encontrado (DFS): ['Almacen', 'Centro', 'ZonaNorte']\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Sección 4.6: Implementación de DFS\n",
+    "def dfs(grafo, inicio, objetivo, visitados=None, camino=None):\n",
+    "    if visitados is None:\n",
+    "        visitados = set()\n",
+    "    if camino is None:\n",
+    "        camino = [inicio]\n",
+    "\n",
+    "    nodo_actual = camino[-1]\n",
+    "\n",
+    "    if nodo_actual == objetivo:\n",
+    "        return camino\n",
+    "\n",
+    "    visitados.add(nodo_actual)\n",
+    "\n",
+    "    for vecino in grafo[nodo_actual]:\n",
+    "        if vecino not in visitados:\n",
+    "            nuevo_camino = dfs(grafo, inicio, objetivo, visitados, camino + [vecino])\n",
+    "            if nuevo_camino is not None:\n",
+    "                return nuevo_camino\n",
+    "\n",
+    "    return None\n",
+    "\n",
+    "resultado_dfs = dfs(mapa, \"Almacen\", \"ZonaNorte\")\n",
+    "print(\"Camino encontrado (DFS):\", resultado_dfs)"
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": null,
-   "id": "5d0cb890-0005-4259-b967-31256c9259fa",
+   "id": "481a06dc-b95a-4803-bf25-e839511a65f9",
    "metadata": {},
    "outputs": [],
    "source": []
